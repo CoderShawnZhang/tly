@@ -10,6 +10,7 @@
 define('TLY',realpath(''));
 define('CORE',TLY.'/core');
 define('APP',TLY.'/app');
+define('MODULE','app');
 define('DEBUG',true);
 
 if (DEBUG) {

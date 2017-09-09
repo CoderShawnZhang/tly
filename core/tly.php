@@ -14,7 +14,17 @@ class tly
     {
         //启动路由解析
         $route = new \core\lib\route();
-//        dd($route);
+        $controller = $route->controller;
+        $action = $route->action;
+        $controllerFile = APP.'/controller/'.$controller.'Controller.php';
+        $controllerClass = '\\'.MODULE.'\controller\\'.$controller.'controller';
+        if(is_file($controllerFile)){
+            include $controllerFile;
+            $routeObj = new $controllerClass();//实例化控制器
+            $routeObj->$action();//调用控制器方法
+        }else{
+            throw new \Exception('找不到控制器');
+        }
     }
 
     /**

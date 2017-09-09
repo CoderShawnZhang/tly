@@ -10,7 +10,7 @@ class route
     /**
      * @var 路由控制器
      */
-    public $ctl;
+    public $controller;
 
     /**
      * @var 路由方法
@@ -28,7 +28,7 @@ class route
             $path = $_SERVER['REQUEST_URI'];
             $pathArr = explode('/',trim($path,'/'));
             if(isset($pathArr[0])){
-                $this->ctl = $pathArr[0];//存在控制器u
+                $this->controller = $pathArr[0];//存在控制器u
                 unset($pathArr[0]);//卸载控制器
             }
             if(isset($pathArr[1])){
@@ -48,7 +48,7 @@ class route
                 $i = $i+2;
             }
         }else{
-            $this->ctl = 'index';
+            $this->controller = 'index';
             $this->action = 'index;';
         }
     }
