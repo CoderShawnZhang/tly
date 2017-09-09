@@ -6,6 +6,7 @@
  * 3:启动框架
  */
 header('Content-type:text/html;charset=utf-8');
+ini_set('date.timezone','Asia/Shanghai');
 /*1*/
 define('TLY',realpath(''));
 define('CORE',TLY.'/core');

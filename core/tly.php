@@ -4,6 +4,8 @@
  */
 namespace core;
 
+use core\lib\log;
+
 class tly
 {
 
@@ -15,6 +17,7 @@ class tly
      */
     public static function run()
     {
+        log::init();
         //启动路由解析
         $route = new \core\lib\route();
         $controller = $route->controller;
@@ -25,6 +28,7 @@ class tly
             include $controllerFile;
             $routeObj = new $controllerClass();//实例化控制器
             $routeObj->$action();//调用控制器方法
+            log::log('Controller:'.$controller.'  -  '.'Action:'.$action,'route');
         }else{
             throw new \Exception('找不到控制器');
         }

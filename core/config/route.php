@@ -1,5 +1,5 @@
 <?php
 return array(
-    'CONTROLLER' =>'indexa',
-    'ACTION' => 'indexb'
+    'CONTROLLER' =>'index1111a',
+    'ACTION' => 'indexb2222'
 );

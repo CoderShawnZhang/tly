@@ -11,14 +11,15 @@ use core\tly;
 class indexController extends tly
 {
     public function index(){
-
+        /*
         $model = new model();
         dd($model);
         $sql = "select * from article";
         $res = $model->query($sql);
 //        dd($res->fetchAll());
 
-        $conf = config::get('CONTROLLER','route');
+        */
+//        $conf = config::get('CONTROLLER','route');
 
         $data = 'Hellow world';
         $this->assign('data',$data);
