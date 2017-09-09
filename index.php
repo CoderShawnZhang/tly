@@ -1,11 +1,11 @@
 <?php
 /**
- * 框架的入口文件
+ * TLY框架的入口文件
  * 1:定义常量
  * 2:加载函数库
  * 3:启动框架
  */
-//error_reporting();
+header('Content-type:text/html;charset=utf-8');
 /*1*/
 define('TLY',realpath(''));
 define('CORE',TLY.'/core');

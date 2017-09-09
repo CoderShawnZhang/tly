@@ -6,7 +6,10 @@ namespace core;
 
 class tly
 {
+
     public static $classMap = array();
+
+    public $assign;
     /**
      * 框架入口
      */
@@ -47,6 +50,18 @@ class tly
             } else {
                 return false;
             }
+        }
+    }
+
+    public function assign($name,$value){
+        $this->assign[$name] = $value;
+    }
+
+    public function display($file){
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            extract($this->assign);//将数组打散成单独变量
+            include $file;
         }
     }
 }

@@ -28,14 +28,14 @@ class route
             $path = $_SERVER['REQUEST_URI'];
             $pathArr = explode('/',trim($path,'/'));
             if(isset($pathArr[0])){
-                $this->controller = $pathArr[0];//存在控制器u
+                $this->controller = $pathArr[0];//存在控制器
                 unset($pathArr[0]);//卸载控制器
             }
             if(isset($pathArr[1])){
                 $this->action = $pathArr[1];//存在方法
                 unset($pathArr[1]);//卸载方法
             }else{
-                $this->action = 'index';
+                $this->action = config::get('ACTION','route');
             }
 
             //解析路由参数
@@ -48,8 +48,8 @@ class route
                 $i = $i+2;
             }
         }else{
-            $this->controller = 'index';
-            $this->action = 'index;';
+            $this->controller = config::get('CONTROLLER','route');
+            $this->action = config::get('ACTION','route');
         }
     }
 }
