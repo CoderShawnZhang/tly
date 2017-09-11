@@ -30,7 +30,7 @@ class tly
             $routeObj->$action();//调用控制器方法
             log::log('Controller:'.$controller.'  -  '.'Action:'.$action,'route');
         }else{
-            throw new \Exception('找不到控制器');
+            throw new \Exception('找不到控制器'.$controller);
         }
     }
 
