@@ -64,7 +64,10 @@ class tly
     public function display($file){
         $file = APP.'/views/'.$file;
         if(is_file($file)){
-            extract($this->assign);//将数组打散成单独变量
+            //是否渲染页面参数
+            if(isset($this->assign) and is_array($this->assign)){
+                extract($this->assign);//将数组打散成单独变量
+            }
             include $file;
         }
     }

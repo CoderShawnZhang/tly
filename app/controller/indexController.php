@@ -26,4 +26,8 @@ class indexController extends tly
         $this->assign('title','这是title');
         $this->display('index.html');
     }
+
+    public function test(){
+        $this->display('t.html');
+    }
 }
